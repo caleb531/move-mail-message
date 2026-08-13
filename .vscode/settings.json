@@ -1,0 +1,11 @@
+{
+  "python.languageServer": "None",
+  "python.analysis.extraPaths": [".virtualenv"],
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+[project]
+name = "move-mail-message"
+version = "0.1.0"
+description = "An Alfred workflow to quickly move messages in Alfred Mail."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "Caleb Evans", email = "caleb@calebevans.me"}
+]
+maintainers = [
+    {name = "Caleb Evans", email = "caleb@calebevans.me"}
+]
+license = "MIT"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "alfred-workflow-packager>=3.2.1",
+    "ruff>=0.12.0",
+    "ty>=0.0.14",
+]
+
+[tool.ruff]
+include = ["**/*.py"]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    "W",
+    # pyflakes
+    "F",
+    # isort
+    "I",
+    # perflint
+    "PERF",
+    # flake8-annotations
+    "ANN001",
+    "ANN201",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ANN001", "ANN201"]

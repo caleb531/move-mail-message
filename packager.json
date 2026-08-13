@@ -1,0 +1,10 @@
+{
+  "export_files": [
+    "Move Mail Message.alfredworkflow"
+  ],
+  "bundle_id": "com.calebevans.movemailmessage",
+  "resources": [
+    "icon.png",
+    "mmm/*"
+  ]
+}
