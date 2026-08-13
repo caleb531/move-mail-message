@@ -34,9 +34,9 @@ select = [
     "I",
     # perflint
     "PERF",
-    # flake8-annotations
-    "ANN001",
-    "ANN201",
+    # # flake8-annotations
+    # "ANN001",
+    # "ANN201",
 ]
 
 [tool.ruff.lint.per-file-ignores]

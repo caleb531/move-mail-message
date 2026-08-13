@@ -25,7 +25,6 @@ import re
 import subprocess
 from pathlib import Path
 
-
 WORKFLOW_DIR = Path(__file__).resolve().parent
 ACCOUNT_SCRIPT = WORKFLOW_DIR / "get_selected_account.applescript"
 
@@ -138,9 +137,7 @@ def find_account_dir(mail_root: Path, account_id: str) -> Path:
         if path.is_dir() and path.name.casefold() == wanted:
             return path
 
-    raise RuntimeError(
-        f"Could not locate Mail directory for account {account_id!r}"
-    )
+    raise RuntimeError(f"Could not locate Mail directory for account {account_id!r}")
 
 
 def mailbox_parts(account_dir: Path, mailbox: Path) -> list[str]:
@@ -162,9 +159,7 @@ def mailbox_parts(account_dir: Path, mailbox: Path) -> list[str]:
     relative = mailbox.relative_to(account_dir)
 
     return [
-        component[:-5]
-        for component in relative.parts
-        if component.endswith(".mbox")
+        component[:-5] for component in relative.parts if component.endswith(".mbox")
     ]
 
 
