@@ -23,3 +23,13 @@ for the workflow to function, and fortunately, they have a much smaller size
 footprint than full-blown Xcode.
 
 <img src="screenshot-clt-installer.png" alt="Prompt to install Apple's Command Line Tools" width="461" />
+
+## Usage
+
+To use:
+
+1. Select one or more messages in the Mail app; they must all be from the same account
+2. Press <kbd>cmd-shift-m</kbd> to spawn the workflow; from here, you can filter to the desired destination folder
+3. When you action the selected folder in Alfred, it will move all messages
+
+Please note that this workflow requires accessibility permissions because it is the only reliable way to move messages from a scripting context.
