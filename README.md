@@ -11,7 +11,9 @@ Move Mail Message is an [Alfred][alfred] workflow that enables you to quickly mo
 
 To download the workflow, simply click one of the download links below.
 
-*Download links TBD*
+[Download Move Mail Message][workflow-download-alfred5]
+
+[workflow-download-alfred5]: https://github.com/caleb531/move-mail-message/raw/main/Move%20Mail%20Message.alfredworkflow
 
 ### Command Line Tools
 
