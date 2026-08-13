@@ -31,6 +31,12 @@ on run argv
 			set destinationMailbox to mailbox (mailboxName as text) of destinationMailbox
 		end repeat
 
-		move selectedMessages to destinationMailbox
+		-- Mail's move command expects a single object specifier. Passing the
+		-- evaluated selection list makes Mail try to coerce the whole list into
+		-- one specifier, which fails with error -1700. Move each message
+		-- separately so Mail receives the original message specifier each time
+		repeat with selectedMessage in selectedMessages
+			move selectedMessage to destinationMailbox
+		end repeat
 	end tell
 end run
