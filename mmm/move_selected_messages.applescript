@@ -217,7 +217,8 @@ on moveSelectionThroughMenu(accountName, allAccountNames, mailboxPath)
 
 	tell application "System Events"
 		if enabled of destinationItem is false then error "The Move to destination \"" & my joinedMailboxPath(mailboxPath) & "\" is disabled"
-		click destinationItem
+		-- AXPick invokes the unique mailbox command discovered through Accessibility
+		perform action "AXPick" of destinationItem
 	end tell
 end moveSelectionThroughMenu
 
