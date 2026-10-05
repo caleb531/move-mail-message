@@ -366,6 +366,15 @@ def main(argv=None):
     try:
         results = get_results(args.query)
 
+        if not results:
+            results = [
+                {
+                    "title": "No results",
+                    "subtitle": f"No folders matching '{args.query}'",
+                    "valid": False,
+                }
+            ]
+
     except Exception as exc:
         results = [
             {
