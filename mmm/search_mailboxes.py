@@ -330,7 +330,7 @@ def build_items(
     ]
 
 
-def get_results(query: str = "") -> dict:
+def get_results(query: str = "") -> list[dict]:
     """
     Main reusable API for callers that import this module.
 
@@ -341,19 +341,17 @@ def get_results(query: str = "") -> dict:
     # The AppleScript has already beeped. Returning no items prevents Alfred
     # from presenting folders from an invalid or ambiguous selection.
     if not account_id:
-        return {"items": []}
+        return []
 
     mail_root = get_mail_root()
     account_dir = find_account_dir(mail_root, account_id)
     mailboxes = get_mailboxes(account_dir)
 
-    return {
-        "items": build_items(
-            account_id=account_id,
-            mailboxes=mailboxes,
-            query=query.strip(),
-        )
-    }
+    return build_items(
+        account_id=account_id,
+        mailboxes=mailboxes,
+        query=query.strip(),
+    )
 
 
 def main(argv=None):
@@ -369,17 +367,15 @@ def main(argv=None):
         results = get_results(args.query)
 
     except Exception as exc:
-        results = {
-            "items": [
-                {
-                    "title": "Unable to read Mail folders",
-                    "subtitle": str(exc),
-                    "valid": False,
-                }
-            ]
-        }
+        results = [
+            {
+                "title": "Unable to read Mail folders",
+                "subtitle": str(exc),
+                "valid": False,
+            }
+        ]
 
-    print(json.dumps(results))
+    print(json.dumps({"items": results}))
 
 
 if __name__ == "__main__":
