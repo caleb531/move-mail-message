@@ -19,8 +19,8 @@ required-version = ">=0.13.5,<0.14"
 [dependency-groups]
 dev = [
     "alfred-workflow-packager>=3.2.1",
-    "ruff>=0.12.0",
-    "ty>=0.0.14",
+    "ruff>=0.16.3",
+    "ty>=0.0.71",
 ]
 
 [tool.ruff]
